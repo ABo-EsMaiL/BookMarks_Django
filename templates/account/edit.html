@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Account{% endblock %}
+
+{% block content %}
+  <h1>Edit Account</h1>
+  <p>Update your account information below:</p>
+  <form method="post" enctype="multipart/form-data">
+    {{ user_form.as_p }}
+    {{ profile_form.as_p }}
+    {% csrf_token %}
+    <p><input type="submit" value="update"></p>
+  </form>
+
+  <p>
+    Dashboard <a href="{% url 'dashboard' %}">Back to Dashboard</a>
+    | Change Password <a href="{% url 'password_change' %}">Change</a>
+    | Logout <a href="{% url 'logout' %}">Logout</a>
+    | <a href="{% url 'password_reset' %}">Forgot Password?</a>
+  </p>
+
+{% endblock %}
