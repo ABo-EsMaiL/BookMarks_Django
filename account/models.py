@@ -6,7 +6,7 @@ import datetime
 
 def user_directory_path(instance, filename):
     # file will be uploaded to MEDIA_ROOT/user_<username>/year/month/day/<filename>
-    return f'{instance.user.username}/{datetime.datetime.now().strftime("%Y/%m/%d")}/{filename}'
+    return f'{instance.user.id}/{datetime.datetime.now().strftime("%Y/%m/%d")}/{filename}'
 
 class Profile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
