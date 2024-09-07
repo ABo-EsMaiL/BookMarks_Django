@@ -3,6 +3,12 @@
 {% block title %}Create New Account{% endblock %}
 
 {% block content %}
+{% if user.is_authenticated %}
+        <script type="text/javascript">
+            window.location.href = "{% url 'dashboard' %}";
+        </script>
+{% else %}
+
     <h2>SIGN UP</h2>
     <p>
         Please, fill out the form below to create a new account.
@@ -16,4 +22,5 @@
     <p>
         Already have an account? <a href="{% url 'login' %}">Login here</a>.
     </p>
+{% endif %}
 {% endblock %}
