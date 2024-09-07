@@ -13,10 +13,11 @@
     <p>Your username and password didn't match. Please try again.</p>
 {% else %}
 <p>
-    Please login with your username and password below.
+    Please login with your username and password below. <br>
+    Don't have an account? <a href="{% url 'register' %}">Sign up here.</a>
 </p>
 {% endif %}
-    
+
 <div class="login-form">
     <form method="POST" action="{% url 'login' %}">
         {{ form.as_p }}

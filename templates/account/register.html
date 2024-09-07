@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Create New Account{% endblock %}
+
+{% block content %}
+    <h2>SIGN UP</h2>
+    <p>
+        Please, fill out the form below to create a new account.
+        All fields are required.
+    </p>
+    <form method="post">
+        {{ user_form.as_p }}
+        {% csrf_token %}
+        <p><input type="submit" value="signup"></p>
+    </form>
+    <p>
+        Already have an account? <a href="{% url 'login' %}">Login here</a>.
+    </p>
+{% endblock %}
